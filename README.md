@@ -111,49 +111,49 @@ Generated reel appears in the Gallery page.
 
 ### Home Page
 
-![Home](Project%20Images/home1.png)
+![Home](Project_Images/home1.png)
 
 ---
 
 ### Features Section
 
-![Features](Project%20Images/homeMid.png)
+![Features](Project_Images/homeMid.png)
 
 ---
 
 ### Create Reel Page
 
-![Create Reel](Project%20Images/create1.png)
+![Create Reel](Project_Images/create1.png)
 
 ---
 
 ### Upload Images
 
-![Upload Images](Project%20Images/createAddImage.png)
+![Upload Images](Project_Images/createAddImage.png)
 
 ---
 
 ### Text and Music Selection
 
-![Music Selection](Project%20Images/createAddTextSelectMusic.png)
+![Music Selection](Project_Images/createAddTextSelectMusic.png)
 
 ---
 
 ### Reel Creation Started
 
-![Flash Message](Project%20Images/creationStartedFlashMessage.png)
+![Flash Message](Project_Images/creationStartedFlashMessage.png)
 
 ---
 
 ### Gallery Page
 
-![Gallery](Project%20Images/GallaryPage.png)
+![Gallery](Project_Images/GallaryPage.png)
 
 ---
 
 ### Generated Reels
 
-![Generated Reels](Project%20Images/GallaryShowCreatedReel.png)
+![Generated Reels](Project_Images/GallaryShowCreatedReel.png)
 
 ---
 
