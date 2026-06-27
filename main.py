@@ -2,19 +2,12 @@ from flask import Flask, render_template, request, flash
 import uuid
 from werkzeug.utils import secure_filename
 import os
-import threading
-from generate_proccess import start_background_worker
 
 UPLOAD_FOLDER = 'user_uploads'
 ALLOWED_EXTENSIONS = {'png', 'jpg', 'jpeg'}
 
 app = Flask(__name__)
-worker = threading.Thread(
-    target=start_background_worker,
-    daemon=True
-)
 
-worker.start()
 app.secret_key = "myflashsecretkey"
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 
@@ -62,5 +55,4 @@ def gallery():
     print(reels)
     return render_template("gallery.html",reels = reels)
 
-if __name__ == "__main__":
-    app.run(host="0.0.0.0", debug=True)
+app.run(host="0.0.0.0", debug=True)
