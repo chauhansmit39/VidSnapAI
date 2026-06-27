@@ -26,19 +26,26 @@ def create_reel(folder):
     subprocess.run(command,shell=True,check=True) #shell=True mean run in shell and check=True mean that not show any error.
     print("CR:",folder)
 
-if __name__ == "__main__":
-    while True:
-        print("Proccessing queue...")
-        with open("done.txt","r") as f:
-            done_folders = f.readlines()
+def process_queue():
+    print("Background worker started")
 
-        done_folders= [f.strip() for f in done_folders]    
-        folders = os.listdir("user_uploads")
-        # print(folders,done_folders)
-        for folder in folders:  
-            if(folder not in done_folders):
-                text_to_audio(folder) # Generate the audio.mp3 from desc.txt
-                create_reel(folder) # Convert the images and audio.mp3 inside the folder to the reel.
-                with open("done.txt", "a") as f:
-                    f.write(folder + "\n")   
-        time.sleep(4)     
+    while True:
+        try:
+            with open("done.txt", "r") as f:
+                done_folders = [x.strip() for x in f.readlines()]
+
+            folders = os.listdir("user_uploads")
+
+            for folder in folders:
+                if folder not in done_folders:
+
+                    text_to_audio(folder)
+                    create_reel(folder)
+
+                    with open("done.txt", "a") as f:
+                        f.write(folder + "\n")
+
+        except Exception as e:
+            print(e)
+
+        time.sleep(4)   
