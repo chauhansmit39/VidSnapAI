@@ -5,8 +5,6 @@ from elevenlabs import VoiceSettings
 from elevenlabs.client import ElevenLabs
 from config import ELEVENLABS_API_KEY
 
-ELEVENLABS_API_KEY = os.getenv("ELEVENLABS_API_KEY")
-
 elevenlabs = ElevenLabs(
     api_key=ELEVENLABS_API_KEY,
 )
