@@ -26,7 +26,7 @@ def create_reel(folder):
     subprocess.run(command,shell=True,check=True) #shell=True mean run in shell and check=True mean that not show any error.
     print("CR:",folder)
 
-if __name__ == "__main__":
+def start_background_worker():
     while True:
         print("Proccessing queue...")
         with open("done.txt","r") as f:
