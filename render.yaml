@@ -1,0 +1,28 @@
+services:
+  # Flask Web Service
+  - type: web
+    name: vidsnapai-web
+    runtime: python
+
+    buildCommand: |
+      pip install -r requirements.txt
+
+    startCommand: gunicorn main:app
+
+    envVars:
+      - key: ELEVENLABS_API_KEY
+        sync: false
+
+  # Background Worker
+  - type: worker
+    name: vidsnapai-worker
+    runtime: python
+
+    buildCommand: |
+      pip install -r requirements.txt
+
+    startCommand: python generate_process.py
+
+    envVars:
+      - key: ELEVENLABS_API_KEY
+        sync: false
